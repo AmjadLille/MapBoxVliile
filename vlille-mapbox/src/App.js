@@ -3,11 +3,11 @@ import ReactMapGL from 'react-map-gl';
 
 export default function App () {
 const [viewport, setViewport]= useState({
-  width: "400vw",
-  height: "400vh",
-  latitude: 37.7577,
-  longitude: -122.4376,
-  zoom: 8
+  width: "100vw",
+  height: "100vh",
+  latitude: 50.629250,
+  longitude: 3.057256,
+  zoom: 13
 })
   
 
@@ -16,6 +16,10 @@ const [viewport, setViewport]= useState({
     <div>
       <ReactMapGL {...viewport}
       mapboxApiAccessToken={"pk.eyJ1IjoidmxpbGxlLXdpbGQiLCJhIjoiY2s5MGM1N3gwMDA4YzNlcm9tMDA4bHBkdiJ9.JTUAnOs5AsgSFFSMxTIOuA"}
+      mapStyle='mapbox://styles/vlille-wild/ck90dn83w04ps1iqsg7ykglo2'
+      onViewportChange={viewport => {
+        setViewport(viewport);
+      }}
       >
 
       </ReactMapGL>
